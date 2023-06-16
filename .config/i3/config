@@ -3,7 +3,7 @@ set $mod Mod4
 focus_follows_mouse no
 font pango:hack 10
 bindsym $mod+Return exec kitty
-bindcode $mod+40 exec --no-startup-id dmenu_run -fn hack
+bindcode $mod+40 exec --no-startup-id dmenu_run -fn hack-14
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+Shift+c reload
@@ -118,7 +118,7 @@ bindsym $mod+r mode "resize"
 bar {
         #status_command i3status
         status_command i3blocks
-        font pango:Hack, FontAwesome 10
+        font pango:Hack, FontAwesome 14
     	colors {
             separator  #1f222d
             background #1f222d

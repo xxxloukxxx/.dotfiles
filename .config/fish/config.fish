@@ -16,15 +16,13 @@ alias bat="batcat"
 alias du="du -h"
 alias df="df -h"
 
-alias ainst="sudo apt install"
-alias aremove="sudo apt remove"
+alias agi="sudo apt install"
+alias agr="sudo apt remove"
 
 # alias edit_config="micro ~/.config/bspwm/bspwmrc  ~/.config/sxhkd/sxhkdrc  ~/.config/fish/config.fish ~/.config/polybar/config.ini ~/.Xresources"
 
 #alias maj="sudo apt-get -y -qq update && sudo apt-get -y -qq full-upgrade && sudo apt-get -y -qq autoremove && sudo aptitude -y autoclean && sudo aptitude -y -q purge && sudo aptitude -y -q purge ~c"
 alias maj="sudo apt-get -y -qq update && sudo apt-get -y -qq full-upgrade && sudo apt-get -y -qq autoremove && sudo aptitude -y -q=5 autoclean && sudo aptitude -y -q=5 purge && sudo aptitude -y -q=5 purge ~c"
-
-
 
 export NNN_OPTS='de'
 export NNN_FIFO=/tmp/nnn.fifo

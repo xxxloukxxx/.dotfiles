@@ -2,6 +2,10 @@ command=/usr/share/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
 
+[rss]
+command=rsstail -n1 -1 -N -u https://www.francetvinfo.fr/titres.rss
+interval=100
+
 [volume]
 #label=VOL
 label=♪
@@ -11,8 +15,9 @@ interval=once
 signal=10
 
 [time]
-command=date '+%d-%m-%y %H:%M '
+command=date '+%d-%m %H:%M '
 interval=2
+
 
 # Generic media player support
 #
