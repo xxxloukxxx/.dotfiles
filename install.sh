@@ -19,6 +19,9 @@ sudo aptitude -y purge
 sudo aptitude -y purge ~c 
 
 cp -fr .config ~/
+cp -fr .vim ~/
+cp -fr .vimrc ~/
+cp -fr .latexmkrc ~/
 cp -fr .w ~/
 # cp -fr .X* ~/
 cp -fr .fonts ~/
