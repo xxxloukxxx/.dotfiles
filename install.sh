@@ -2,7 +2,7 @@
 sudo apt-get -qq update
 sudo apt-get -y -qq full-upgrade
 sudo apt-get -y -qq install lightdm xorg i3 i3blocks picom
-sudo apt-get -y -qq install fish xterm btop kitty
+sudo apt-get -y -qq install fish rxvt-unicode xterm btop kitty
 sudo apt-get -y -qq install xdg-utils dex
 sudo apt-get -y -qq install suckless-tools numlockx 
 sudo apt-get -y -qq install psmisc git sudo aptitude
@@ -23,9 +23,9 @@ sudo aptitude -y purge ~c
 cp -fr .config ~/
 cp -fr .vim ~/
 cp -fr .vimrc ~/
+cp -fr .X* ~/
 cp -fr .latexmkrc ~/
 cp -fr .w ~/
-# cp -fr .X* ~/
 cp -fr .fonts ~/
 fc-cache -r
 
