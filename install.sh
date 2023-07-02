@@ -13,7 +13,7 @@ sudo apt-get -y -qq install libnotify-bin dunst feh polybar
 sudo apt-get -y -qq install libreadline-dev libx11-dev libxinerama-dev libxft-dev
 sudo apt-get -y -qq install pavucontrol pulseaudio alsa-utils
 sudo apt-get -y -qq install openssh-server openssh-client
-sudo apt-get -y -qq install neovim python3-neovim
+sudo apt-get -y -qq install neovim python3-neovim delta silversearcher-ag ripgrep bat vim-gtk3
 sudo apt-get -y -qq install firmware-misc-nonfree
 sudo apt-get -y -qq autoremove
 sudo aptitude -y autoclean
