@@ -1,4 +1,4 @@
-" Common options
+" Common Options
 set nocompatible
 filetype on
 
@@ -37,11 +37,23 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'scrooloose/nerdtree'
+Plug 'preservim/vim-markdown'
 Plug 'Chiel92/vim-autoformat'
 Plug 'lifepillar/vim-mucomplete'
+Plug 'tpope/vim-sensible'
+Plug 'airblade/vim-gitgutter'
+Plug 'preservim/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'jiangmiao/auto-pairs'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'lepture/vim-jinja'
+Plug 'alvan/vim-closetag'
+Plug 'mhinz/vim-startify'
 call plug#end()
+
+" Markdown
+set nofoldenable
 
 " Light line plugin
 set laststatus=2
@@ -82,6 +94,11 @@ let g:vimtex_compiler_latexmk_engines = {
 
 
 "My mapping
+nnoremap <F12> :w<CR>
 inoremap <F12> <ESC>:w<CR>i
 
-
+augroup filetype_c
+    autocmd!
+    :autocmd FileType python inoremap <F11> <ESC>:w<CR>:!python %<CR>
+    :autocmd FileType python noremap <F11> :w<CR>:!python %<CR>
+augroup end
