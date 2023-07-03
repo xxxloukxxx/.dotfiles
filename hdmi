@@ -1,0 +1,24 @@
+#!/bin/bash
+# a simple logout dialog
+choice=`echo -e "0: HDMI off\n1: HDMI on" | dmenu -fn hack-12 -nb "#000" | cut -d ':' -f 1`
+ 
+# execute the choice in background
+case "$choice" in
+  0) xrandr --output HDMI1 --off & ;;
+  1) xrandr --output HDMI1 --auto --right-of DP1 & ;;
+  *) exit ;;
+esac
+
+
+#!/bin/sh
+
+# choix=$(echo "HDMI on\nHDMI off" | dmenu -fn hack-12 -nb "#000")
+# 
+# if [ "$choix" = "HDMI off" ]
+# then
+# fi
+# 
+# if [ "$choix" = "HDMI on" ]
+# then
+# xrandr --output HDMI1 --auto --right-of DP1
+# fi
