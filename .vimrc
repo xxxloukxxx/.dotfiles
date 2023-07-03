@@ -40,15 +40,14 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdtree'
 Plug 'Chiel92/vim-autoformat'
+Plug 'lifepillar/vim-mucomplete'
 call plug#end()
 
 " Light line plugin
 set laststatus=2
 set noshowmode
 
-let g:lightline = {
-            \ 'colorscheme': 'one',
-            \ }
+let g:lightline = { 'colorscheme': 'one' }
 
 "Colorscheme
 colorscheme onedark
@@ -60,3 +59,29 @@ filetype indent on
 
 "Ale Plugin
 set omnifunc=ale#completion#OmniFunc
+set completeopt+=menuone
+set completeopt+=noselect
+
+"mu-complete
+let g:mucomplete#enable_auto_at_startup = 1
+
+"vimtex
+let g:vimtex_compiler_latexmk = {
+            \ 'executable' : 'latexmk',
+            \ 'options' : [
+            \   '-xelatex',
+            \   '-file-line-error',
+            \   '-synctex=1',
+            \   '-interaction=nonstopmode',
+            \ ],
+            \}
+
+let g:vimtex_compiler_latexmk_engines = {
+            \ '_'                : '-xelatex',
+            \}
+
+
+"My mapping
+inoremap <F12> <ESC>:w<CR>i
+
+
