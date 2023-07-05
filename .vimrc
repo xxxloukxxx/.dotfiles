@@ -114,7 +114,7 @@ nnoremap <leader>q :q<cr>
 nnoremap <leader>s :%s/
 nnoremap <leader>v :vs<cr>
 nnoremap <leader>w :w!<cr>
-nnoremap <leader>i :Autoformat<cr>
+nnoremap <leader>d "_dd
 
 nnoremap <M-up> :m .-2<CR>==
 nnoremap <M-down> :m .+1<CR>==
@@ -127,5 +127,6 @@ nnoremap <C-S-M-down> :t.<CR>
 nnoremap <C-S-M-up> yyP
 
 nnoremap <C-k> "_dd
+nnoremap <C-S-i> :Autoformat<CR>
 
 
