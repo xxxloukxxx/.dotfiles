@@ -49,7 +49,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'lepture/vim-jinja'
 Plug 'alvan/vim-closetag'
-Plug 'mhinz/vim-startify'
 call plug#end()
 
 " Markdown
@@ -77,28 +76,56 @@ set completeopt+=noselect
 "mu-complete
 let g:mucomplete#enable_auto_at_startup = 1
 
-"vimtex
-let g:vimtex_compiler_latexmk = {
-            \ 'executable' : 'latexmk',
-            \ 'options' : [
-            \   '-xelatex',
-            \   '-file-line-error',
-            \   '-synctex=1',
-            \   '-interaction=nonstopmode',
-            \ ],
-            \}
+"My mapping
+augroup filetype_py
+    autocmd!
+    :autocmd FileType python noremap <leader>c :w<CR>:!python %<CR>
+augroup end
 
-let g:vimtex_compiler_latexmk_engines = {
-            \ '_'                : '-xelatex',
-            \}
+augroup filetype_tex
+    autocmd!
+    :autocmd FileType tex noremap <leader>c :VimtexCompile<CR>
+    let g:vimtex_compiler_latexmk = {
+                \ 'executable' : 'latexmk',
+                \ 'options' : [
+                \   '-xelatex',
+                \   '-file-line-error',
+                \   '-synctex=1',
+                \   '-interaction=nonstopmode',
+                \ ],
+                \}
+    let g:vimtex_quickfix_enabled = 0
+    let g:vimtex_compiler_latexmk_engines = {
+                \ '_'                : '-xelatex',
+                \}
+augroup end
 
 
 "My mapping
-nnoremap <F12> :w<CR>
-inoremap <F12> <ESC>:w<CR>i
+noremap <space> :
 
-augroup filetype_c
-    autocmd!
-    :autocmd FileType python inoremap <F11> <ESC>:w<CR>:!python %<CR>
-    :autocmd FileType python noremap <F11> :w<CR>:!python %<CR>
-augroup end
+let mapleader = " "
+let g:mapleader = " "
+
+nnoremap <leader>b :b<space>
+nnoremap <leader>e :edit<space>
+nnoremap <leader>f :Files<space>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>s :%s/
+nnoremap <leader>v :vs<cr>
+nnoremap <leader>w :w!<cr>
+nnoremap <leader>i :Autoformat<cr>
+
+nnoremap <M-up> :m .-2<CR>==
+nnoremap <M-down> :m .+1<CR>==
+inoremap <M-up> <Esc>:m .-2<CR>==gi
+inoremap <M-down> <Esc>:m .+1<CR>==gi
+vnoremap <M-up> :m '<-2<CR>gv=gv
+vnoremap <M-down> :m '>+1<CR>gv=gv
+
+nnoremap <C-S-M-down> :t.<CR>
+nnoremap <C-S-M-up> yyP
+
+nnoremap <C-k> "_dd
+
+
