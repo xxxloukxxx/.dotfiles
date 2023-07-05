@@ -47,8 +47,11 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/indentpython.vim'
-Plug 'lepture/vim-jinja'
 Plug 'alvan/vim-closetag'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'flazz/vim-colorschemes'
+Plug 'sheerun/vim-polyglot'
+Plug 'dracula/vim'
 call plug#end()
 
 " Markdown
@@ -109,7 +112,7 @@ let g:mapleader = " "
 
 nnoremap <leader>b :b<space>
 nnoremap <leader>e :edit<space>
-nnoremap <leader>f :Files<space>
+nnoremap <leader>f :Files<cr>
 nnoremap <leader>q :q<cr>
 nnoremap <leader>s :%s/
 nnoremap <leader>v :vs<cr>
