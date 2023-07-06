@@ -24,7 +24,7 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 " Plug-vim install
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
-    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
@@ -88,19 +88,11 @@ augroup end
 augroup filetype_tex
     autocmd!
     :autocmd FileType tex noremap <leader>c :VimtexCompile<CR>
-    let g:vimtex_compiler_latexmk = {
-                \ 'executable' : 'latexmk',
-                \ 'options' : [
-                \   '-xelatex',
-                \   '-file-line-error',
-                \   '-synctex=1',
-                \   '-interaction=nonstopmode',
-                \ ],
-                \}
+    :autocmd FileType tex noremap <leader>m <esc>:w!<cr>:make<cr>
+    :autocmd FileType markdown noremap <leader>m <esc>:w!<cr>:make<cr>
+    let g:vimtex_compiler_latexmk = {'executable' : 'latexmk', 'options' : [ '-xelatex', '-file-line-error', '-synctex=1', '-interaction=nonstopmode', ], }
     let g:vimtex_quickfix_enabled = 0
-    let g:vimtex_compiler_latexmk_engines = {
-                \ '_'                : '-xelatex',
-                \}
+    let g:vimtex_compiler_latexmk_engines = {'_' : '-xelatex',}
 augroup end
 
 
